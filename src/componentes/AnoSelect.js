@@ -6,9 +6,11 @@ const AnoSelect = ({ marca, modelo, onChange }) => {
 
     useEffect(() => {
         if (marca && modelo) {
-            axios.get('https://parallelleum.com.br/fibe/api/v1/carros/marcas/${marca}/mode')
-                .then(Response => {
-                    setAnos(Response.data);
+            var url=`https://parallelum.com.br/fipe/api/v1/carros/marcas/${marca}/modelos/${modelo}/anos`;
+            axios.get(url)
+                .then(res => {
+                    console.log(res)
+                    setAnos(res.data);
                 })
                 .catch(error => {
                     console.error('Erro ao buscar anos:', error);

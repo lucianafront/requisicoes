@@ -5,10 +5,10 @@ const MarcaSelect = ({ onChange }) => {
     const [marcas, setMarcas] = useState([]);
     useEffect(() => {
 
-        axios.get('https://parallellum.com.br/fipe/api/v1/carros/marcas')
-            .then(Response => {
-                console.log(Response.data)
-                setMarcas(Response.data);
+        axios.get('https://parallelum.com.br/fipe/api/v1/carros/marcas')
+            .then(res => {
+                console.log(res.data)
+                setMarcas(res.data);
             })
             .catch(error => {
                 console.error('Erro ao buscar marcas:', error);

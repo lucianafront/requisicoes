@@ -6,9 +6,11 @@ const ModeloSelect = ({ marca, onChange }) => {
 
     useEffect(() => {
         if (marca) {
-            axios.get('https://parallellum.com.br/fipe/api/v1/carros/${marcas}/mode')
-                .then(Response => {
-                    setModelos(Response.data.modelos);
+            console.log(marca)
+            var url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${marca}/modelos`;
+            axios.get(url)
+                .then(res => {
+                    setModelos(res.data.modelos);
                 })
                 .catch(
                     error => {
