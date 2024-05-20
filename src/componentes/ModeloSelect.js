@@ -19,7 +19,7 @@ const ModeloSelect = ({ marca, onChange }) => {
         }
     }, [marca]);
     return (
-        <select onCchange={(e) => onChange(e.target.value)} disabled={!marca}>
+        <select onChange={(e) => onChange(e.target.value)} disabled={!marca}>
             <option value="">Selecione o Modelo</option>
             {modelos.map(modelo => (
                 <option key={modelo.codigo} value={modelo.codigo}>

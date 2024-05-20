@@ -5,8 +5,10 @@ const Resultado = ({ marca, modelo, ano }) => {
     const [Resultado, setResultado] = useState(null);
 
     useEffect(() => {
-        if (marca && ano) {
-            axios.get('https://parallelleum.com.br/fipe/abi/v1/carros/marcas/${marcas}/model')
+        if (marca && modelo && ano) {
+            var url = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${marca}/modelos/${modelo}/anos/${ano}`;
+
+            axios.get(url)
                 .then(Response => {
                     setResultado(Response.data);
                 })

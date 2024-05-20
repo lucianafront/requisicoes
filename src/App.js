@@ -1,4 +1,3 @@
-import TabelaFipe from './componentes/TabelaFipe';
 import React,{useState} from'react';
 import MarcaSelect from './componentes/MarcaSelect';
 import ModeloSelect from './componentes/ModeloSelect'
